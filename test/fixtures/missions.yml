@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  reward: MyString
+  dayly: 
+  user: one
+
+two:
+  type: 
+  reward: MyString
+  dayly: 
+  user: two

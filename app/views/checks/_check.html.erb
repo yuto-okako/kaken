@@ -1,0 +1,11 @@
+<%= form_for @check do |f| %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.label :achieve, '達成した項目をチェックして下さい！' %>
+  <ul>
+    <% @check_list.each do |list| %>
+      <% num = @check_list.index(list) %>
+      <li><%= list %><%= f.check_box :achieve, {multiple: true}, "項目#{num + 1}", nil %></li>
+    <% end %>
+  </ul>
+  <%= f.submit '記録' %>
+<% end %>

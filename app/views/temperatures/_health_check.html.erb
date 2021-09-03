@@ -1,0 +1,15 @@
+<%= form_for @temperature do |f| %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <p>
+    <%= f.label :taion, '今日の体温:' %>
+    <%= f.number_field :taion, min: 30.0, max: 45.0, step: '0.1' %> ℃
+  </p>
+  <p>
+    <%= f.label :health, '体調不良:' %>
+    <% @health_check.each do |health| %>
+      <%= f.check_box :health, {multiple: true}, health, nil %>
+      <%= health %>
+    <% end %>
+  </p>
+  <%= f.submit '記録' %>
+<% end %>

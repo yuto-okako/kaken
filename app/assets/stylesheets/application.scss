@@ -1,0 +1,23 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+
+* {
+  box-sizing: border-box;
+  float: none;
+}
+
+html{
+  font-size: 62.5%;  /* フォントサイズを10pxに設定(1rem = 10px) */
+}
+
+body{
+  font-size: 1.6rem;
+}
+
+.disabled{
+  pointer-events: none;
+  text-decoration: none;
+  color: black;
+}

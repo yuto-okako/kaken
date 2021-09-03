@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'sessions/new'
+  root 'users#index'      #トップページへのルーティング
+
+  get    '/login',  to: 'sessions#new'      #ログイン
+  post   '/login',  to: 'sessions#create'   #ログイン
+  delete '/logout', to: 'sessions#destroy'  #ログアウト
+  
+  resources :users
+  resources :temperatures
+  resources :checks
+  resources :missions
 end
