@@ -21,7 +21,7 @@ end
 
 def get_point
   if checked?
-    data = Check.find_by(user_id: current_user.id, date: Date.today).achieve
+    data = Check.find_by(user_id: current_user.id, date: Time.zone.today).achieve
     if data
       data = data.split(' / ')
       pnt = data.size

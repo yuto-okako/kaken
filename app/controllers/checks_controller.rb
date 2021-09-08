@@ -7,7 +7,7 @@ class ChecksController < ApplicationController
   
   def create
     @check = Check.new(check_params)
-    @check.date = Date.today
+    @check.date = Time.zone.today
     if @check.save
       redirect_to root_path
     else

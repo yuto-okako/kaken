@@ -7,7 +7,7 @@ class TemperaturesController < ApplicationController
   
   def create
     @temperature = Temperature.new(temperature_params)
-    @temperature.date = Date.today                      #日付は送られてこないので代入
+    @temperature.date = Time.zone.today                      #日付は送られてこないので代入
     if @temperature.save
       redirect_to root_path
     else

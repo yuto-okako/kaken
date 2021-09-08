@@ -1,32 +1,48 @@
 <p>こんにちは！<%= @user.name %>さん！</p>
 <p><%= @user.profile.point %>pt</p>
-<h2>ミッション</h2>
-<ul>
-    <li>健康観察をしよう！
-        <%= link_to btn_str(1), {controller: 'missions', action: 'create', number: 1, reward_type: 'point', reward: 1, dayly: true}, method: :post, class: "#{'disabled' unless btn_str(1) == 'GET!'}" %>
-    </li>
-    <li>項目チェックをしよう！
-        <%= link_to btn_str(2), {controller: 'missions', action: 'create', number: 2, reward_type: 'point', reward: get_point, dayly: true}, method: :post, class: "#{'disabled' unless btn_str(2) == 'GET!'}" %>
-    </li>
-</ul>
+<br>
+
+<button class="open-modal" data-target="modal1">ミッション</button>
+<div id="modal1" class="modal-area">
+  <div class="modal-bg"></div>
+  <div class="modal-wrapper">
+    <div class="modal-content">
+      <ul>
+        <li>健康観察をしよう！
+          <%= link_to btn_str(1), {controller: 'missions', action: 'create', number: 1, reward_type: 'point', reward: 1, dayly: true}, method: :post, class: "#{'disabled' unless btn_str(1) == 'GET!'}" %>
+        </li>
+        <li>項目チェックをしよう！
+          <%= link_to btn_str(2), {controller: 'missions', action: 'create', number: 2, reward_type: 'point', reward: get_point, dayly: true}, method: :post, class: "#{'disabled' unless btn_str(2) == 'GET!'}" %>
+        </li>
+      </ul>
+    </div>
+    <div class="close-modal">
+      ×
+    </div>
+  </div>
+</div>
+<button class="open-modal" data-target="modal2">立腰</button>
+<div id="modal2" class="modal-area">
+  <div class="modal-bg"></div>
+  <div class="modal-wrapper">
+    <div class="modal-content">
+      <h1>ニジューマスク</h1>
+      <%= image_tag 'num-1.png' %>
+    </div>
+    <div class="close-modal">
+      ×
+    </div>
+  </div>
+</div>
+<br>
+
 <%= link_to '健康観察', new_temperature_path %>
 <%= link_to '項目チェック', new_check_path %>
 <%= link_to 'ログアウト', logout_path, method: :delete %>
 <%= link_to '削除', user_path(@user.id), method: :delete %>
+<br>
 
-<button id="openModal">Open modal</button>
-<section id="modalArea" class="modalArea">
-  <div id="modalBg" class="modalBg"></div>
-  <div class="modalWrapper">
-    <div class="modalContents">
-      <h1>ニジューマスク</h1>
-      <%= image_tag 'num-1.png' %>
-    </div>
-    <div id="closeModal" class="closeModal">
-      ×
-    </div>
-  </div>
-</section>
+
 <br>
 <h1>体温データ</h1>
 <% @user.temperatures.each do |t| %>
