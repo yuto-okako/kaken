@@ -1,0 +1,26 @@
+<h2>アイテム図鑑</h2>
+<div class="wrap-item-disp">
+  <% @all_items.each do |all| %>
+    <% if UserItem.find_by(user_id: current_user.id, item_master_id: all.id) %>
+      <div class="item-item-disp open-modal" data-target="list-modal<%= all.id %>"><%= image_tag all.path %></div>
+    <% else %>
+      <div class="item-item-disp"><%= image_tag 'unknown.png' %></div>
+    <% end %>
+  <% end %>
+</div>
+
+<%= link_to 'ゲームページに戻る', games_path, remote: true %>
+
+<% @all_items.each do |i| %>
+  <div id="list-modal<%= i.id %>" class="modal-area">
+    <div class="modal-bg"></div>
+    <div class="modal-wrapper">
+      <div class="modal-content">
+        <h2><%= i.name %></h2>
+        <%= image_tag i.path %>
+        <p><%= i.explanation %></p>
+      </div>
+      <div class="close-modal">×</div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,4 @@
+$('#result').html("<%= j(render partial: 'gacha_result', locals: {result: @result}) %>");
+$('#point').html("<%= j(render partial: 'users/point') %>");
+$('body').addClass('no-scroll');
+$('#result-modal').fadeIn();

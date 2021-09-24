@@ -1,4 +1,7 @@
 <% if logged_in? %>
+    <p>こんにちは！<%= @user.name %>さん！</p>
+    <div id="point"><p><%= @user.profile.point %>pt</p></div>
+    <br>
     <%= render 'logged_in' %>
 <% else %>
     <%= render 'top' %>

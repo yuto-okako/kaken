@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_25_021052) do
+ActiveRecord::Schema.define(version: 2021_09_14_054549) do
 
   create_table "checks", force: :cascade do |t|
     t.string "achieve"
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(version: 2021_08_25_021052) do
     t.datetime "updated_at", precision: 6, null: false
     t.date "date"
     t.index ["user_id"], name: "index_checks_on_user_id"
+  end
+
+  create_table "item_masters", force: :cascade do |t|
+    t.string "path"
+    t.integer "rare"
+    t.string "name"
+    t.string "explanation"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "gacha"
   end
 
   create_table "missions", force: :cascade do |t|
@@ -51,6 +61,16 @@ ActiveRecord::Schema.define(version: 2021_08_25_021052) do
     t.index ["user_id"], name: "index_temperatures_on_user_id"
   end
 
+  create_table "user_items", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "item_master_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "num"
+    t.index ["item_master_id"], name: "index_user_items_on_item_master_id"
+    t.index ["user_id"], name: "index_user_items_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -63,4 +83,6 @@ ActiveRecord::Schema.define(version: 2021_08_25_021052) do
   add_foreign_key "missions", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "temperatures", "users"
+  add_foreign_key "user_items", "item_masters"
+  add_foreign_key "user_items", "users"
 end

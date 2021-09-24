@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  path: MyString
+  rare: 1
+  explanation: MyString
+
+two:
+  path: MyString
+  rare: 1
+  explanation: MyString

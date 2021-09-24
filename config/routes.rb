@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
   root 'users#index'      #トップページへのルーティング
 
   get    '/login',  to: 'sessions#new'      #ログイン
@@ -10,4 +9,10 @@ Rails.application.routes.draw do
   resources :temperatures
   resources :checks
   resources :missions
+  resources :games
+  
+  get  '/gacha'    , to: 'games#gacha'
+  post '/get_gacha', to: 'games#get_gacha'
+  get  '/list'     , to: 'games#list'
+  get  '/have'     , to: 'games#have'
 end

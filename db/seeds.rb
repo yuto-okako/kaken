@@ -1,7 +1,12 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+ItemMaster.create(path: 'msk-wh.png', rare: 3, name: '不織布マスク(白)', explanation: '王道のマスク', gacha: true)
+ItemMaster.create(path: 'msk-pk.png', rare: 3, name: '不織布マスク(桃)', explanation: '王道のマスク', gacha: true)
+ItemMaster.create(path: 'msk-bl.png', rare: 3, name: '不織布マスク(青)', explanation: '王道のマスク', gacha: true)
+ItemMaster.create(path: 'msk-yl.png', rare: 3, name: '不織布マスク(黄)', explanation: '王道のマスク', gacha: true)
+ItemMaster.create(path: 'msk-pa.png', rare: 3, name: '不織布マスク(紫)', explanation: '王道のマスク', gacha: true)
+ItemMaster.create(path: 'msk-gr.png', rare: 3, name: '不織布マスク(緑)', explanation: '王道のマスク', gacha: true)
+ItemMaster.create(path: 'msk-bk.png', rare: 3, name: '不織布マスク(黒)', explanation: '王道のマスク', gacha: true)
+ItemMaster.create(path: 'msk-cloth.png', rare: 4, name: '手作り布マスク', explanation: '布マスク作りが流行ったね', gacha: true)
+ItemMaster.create(path: 'msk-box.png', rare: 4, name: '不織布マスク(箱)', explanation: '売り切れ続出！当時はレア物', gacha: false)
+ItemMaster.create(path: 'msk-abe.png', rare: 0, name: 'アベノマスク', explanation: 'いいものと交換できるよ！', gacha: true)
+ItemMaster.create(path: 'fm-fsv.png', rare: 5, name: '幻の夏祭り', explanation: '消えたひと夏の思い出・・・', gacha: true)
+ItemMaster.create(path: 'sugi.png', rare: 5, name: 'ニジューマスク', explanation: '不織布マスク１枚とあまり効果は変わらないらしい', gacha: false)

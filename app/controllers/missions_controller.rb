@@ -8,10 +8,8 @@ class MissionsController < ApplicationController
         new_point = @profile.point + @mission.reward.to_i
         @profile.update(point: new_point)
       end
-      redirect_to root_path
-    else
-      render 'users/index'
     end
+    @id = @mission.number
   end
   
   private

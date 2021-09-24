@@ -8,16 +8,21 @@
   float: none;
 }
 
-html{
+html {
   font-size: 62.5%;  /* フォントサイズを10pxに設定(1rem = 10px) */
 }
 
-body{
+body {
   -webkit-text-size-adjust: 100%;
   font-size: 1.6rem;
 }
 
-.disabled{
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.disabled {
   pointer-events: none;
   text-decoration: none;
   color: black;
