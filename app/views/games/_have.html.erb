@@ -12,12 +12,12 @@
     <div class="modal-bg"></div>
     <div class="modal-wrapper">
       <div class="modal-content">
-        <h2><%= i.name %></h2>
-        <%= image_tag i.path %>
+        <h2 class="item-name"><%= i.name %></h2>
+        <%= image_tag i.path, class: 'item-img' %>
         <p><%= i.explanation %></p>
         <p>所持数：<%= @num.find_by(item_master_id: i.id).num %>個</p>
       </div>
-      <div class="close-modal">×</div>
+      <div class="close-modal">閉じる</div>
     </div>
   </div>
 <% end %>

@@ -1,7 +1,9 @@
+$modal_index: 10;
+
 .modal-area {
   display: none;
   position: fixed;
-  z-index: 10;
+  z-index: $modal_index;
   top: 0;
   left: 0;
   width: 100%;
@@ -16,11 +18,12 @@
 
 .modal-wrapper {
   position: absolute;
+  border-radius: 10px;
   top: 50%;
   left: 50%;
   transform:translate(-50%,-50%);
-  overflow: auto;
-  height: 70%;
+  /*overflow: auto;
+  height: 70%;*/
   width: 90%;
   max-width: 500px;
   padding: 10px 30px;
@@ -28,10 +31,11 @@
 }
 
 .close-modal {
-  position: absolute;
-  top: 0.5rem;
-  right: 1rem;
-  cursor: pointer;
+  width: 40%;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  background-color: blue;
 }
 
 /*.open-modal*/ .test {
@@ -43,4 +47,8 @@
 
 .no-scroll {
   overflow: hidden;
+}
+
+.item-name {
+  text-align: center;
 }
