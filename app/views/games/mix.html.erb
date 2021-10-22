@@ -1,0 +1,9 @@
+<h1>アイテム合成</h1>
+<% @mix.each do |g| %>
+  <div class="mix-area">
+    <%= image_tag ItemMaster.find_by(name: g.generation).path, size: '300x300' %>
+    <%= link_to '合成する', games_mixing_path(g.id), remote: true, class: "#{'disabled' unless mixable?(g.id)}" %>
+  </div>
+<% end %>
+<%= link_to 'ゲームページに戻る', games_path %>
+<div id="mix-result"></div>

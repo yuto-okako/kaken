@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   include TemperaturesHelper
   include ChecksHelper
   include MissionsHelper
+  include GamesHelper
   
   before_action :const
   

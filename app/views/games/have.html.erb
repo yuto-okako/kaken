@@ -1,11 +1,13 @@
 <h2>アイテムリスト</h2>
 <div class="wrap-item-disp">
   <% @items.each do |i| %>
+    <% unless @num.find_by(item_master_id: i.id).num == 0 %>
     <div class="item-item-disp open-modal" data-target="have-modal<%= i.id %>"><%= image_tag i.path %></div>
+    <% end %>
   <% end %>
 </div>
 
-<%= link_to 'ゲームページに戻る', games_path, remote: true %>
+<%= link_to 'ゲームページに戻る', games_path %>
 
 <% @items.each do |i| %>
   <div id="have-modal<%= i.id %>" class="modal-area">

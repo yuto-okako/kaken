@@ -1,3 +1,4 @@
+<%= render './header' %>
 <div id="replace">
   <button class="open-modal test" data-target="modal1">ミッション</button>
   <button class="open-modal test" data-target="modal2">立腰</button>
@@ -6,7 +7,7 @@
   <%= link_to '健康観察', new_temperature_path %>
   <%= link_to '項目チェック', new_check_path %>
   <%= link_to 'ログアウト', logout_path, method: :delete %>
-  <%= link_to 'ミニゲーム', games_path, remote: true %>
+  <%= link_to 'ミニゲーム', games_path %>
   <%= link_to '削除', user_path(@user.id), method: :delete %>
   <br>
 

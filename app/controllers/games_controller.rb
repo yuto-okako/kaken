@@ -41,6 +41,24 @@ class GamesController < ApplicationController
     end
   end
   
+  def mix
+    @mix = Mixtune.all
+  end
+  
+  def mixing
+    item = Mixtune.find(params[:id])
+    item = ItemMaster.find_by(name: item.generation)
+    @result = item.name + 'を合成しました！'
+    item_save(item)
+    mt = Mixtune.find(params[:id]).material.split('/')
+    mt.each do |m|
+      use = ItemMaster.find_by(name: m)
+      use = UserItem.find_by(user_id: current_user.id, item_master_id: use.id)
+      new_num = use.num - 1
+      use.update(num: new_num)
+    end
+  end
+  
   def list
     @all_items = ItemMaster.all
     @got_items = current_user.items
@@ -49,5 +67,18 @@ class GamesController < ApplicationController
   def have
     @items = current_user.items
     @num = current_user.user_items
+  end
+  
+  private
+  
+  def item_save(item)
+    if UserItem.find_by(user_id: current_user.id, item_master_id: item.id)
+      user_item = UserItem.find_by(user_id: current_user.id, item_master_id: item.id)
+      new_num = user_item.num + 1
+      user_item.update(num: new_num)
+    else
+      user_item = current_user.user_items.build(item_master_id: item.id, num: 1)
+      user_item.save
+    end
   end
 end

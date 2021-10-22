@@ -11,8 +11,10 @@ Rails.application.routes.draw do
   resources :missions
   resources :games
   
-  get  '/gacha'    , to: 'games#gacha'
-  post '/get_gacha', to: 'games#get_gacha'
-  get  '/list'     , to: 'games#list'
-  get  '/have'     , to: 'games#have'
+  get  '/gacha'     , to: 'games#gacha'
+  post '/get_gacha' , to: 'games#get_gacha'
+  get '/mix'        , to: 'games#mix'
+  get '/mix/:id'    , to: 'games#mixing', as: :games_mixing
+  get  '/list'      , to: 'games#list'
+  get  '/have'      , to: 'games#have'
 end

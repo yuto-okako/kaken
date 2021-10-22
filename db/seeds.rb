@@ -10,3 +10,6 @@
 #ItemMaster.create(path: 'msk-abe.png', rare: 0, name: 'アベノマスク', explanation: 'いいものと交換できるよ！', gacha: true)
 #ItemMaster.create(path: 'fm-fsv.png', rare: 5, name: '幻の夏祭り', explanation: '消えたひと夏の思い出・・・', gacha: true)
 #ItemMaster.create(path: 'sugi.png', rare: 5, name: 'ニジューマスク', explanation: '不織布マスク１枚とあまり効果は変わらないらしい', gacha: false)
+ItemMaster.create(path: 'gteat.png', rare: 4, name: 'GO TO EAT 岡山県', explanation: 'お得にお食事！', gacha: true)
+Mixtune.create(material: '不織布マスク(白)/手作り布マスク', generation: 'ニジューマスク')
+Mixtune.create(material: '不織布マスク(白)/不織布マスク(桃)/不織布マスク(青)/不織布マスク(黄)/不織布マスク(紫)/不織布マスク(緑)/不織布マスク(黒)', generation: '不織布マスク(箱)')
