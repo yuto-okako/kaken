@@ -1,21 +1,25 @@
-<h1>新規登録</h1>
-<%= form_for @user do |f| %>
-  <p>
-    <%= f.label :name, '名前:' %>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :email, 'メールアドレス:' %>
-    <%= f.email_field :email %>
-  </p>
-  <p>
-    <%= f.label :password, 'パスワード:' %>
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.label :password_confirmation, 'パスワード(確認):' %>
-    <%= f.password_field :password_confirmation %>
-  </p>
-  <%= f.submit '新規登録' %>
+<h2 class="form-title">新規登録</h2>
+<%= form_for @user, html: {class: 'user_form'} do |f| %>
+  <div class="form-item">
+    <%= f.text_field :name, placeholder: "名前", class: 'form-field js-name-field' %>
+    <div class="error-msg js-name-error"></div>
+  </div>
+  <div class="form-item">
+    <%= f.text_field :email, placeholder: "メールアドレス", class: 'form-field js-mail-field' %>
+    <div class="error-msg js-mail-error"></div>
+  </div>
+  <div class="form-item">
+    <%= f.password_field :password, placeholder: "パスワード", class: 'form-field js-password-field' %>
+    <div class="error-msg js-password-error"></div>
+  </div>
+  <div class="form-item">  
+    <%= f.password_field :password_confirmation, placeholder: "パスワード(確認)", class: 'form-field js-conf-field' %>
+    <div class="error-msg js-conf-error"></div>
+  </div>
+  <%= f.submit '登録する', class: 'form-btn js-form-btn' %>
 <% end %>
-<%= link_to 'トップに戻る', root_path %>
+<div class="form-footer">
+  <%= link_to 'トップに戻る', root_path %>
+  <p>アカウントをお持ちの方はこちら</p>
+  <%= link_to 'ログイン', login_path %>
+</div>

@@ -1,3 +1,6 @@
 $('#mix-result').html("<%= j(render partial: 'mix_result', locals: {result: @result}) %>");
 $('body').addClass('no-scroll');
 $('#mix-result-modal').fadeIn();
+<% for i in 1..@i do %>
+    $('#mix-btn<%= i %>').replaceWith("<%= j(render partial: 'mix_btn', locals: {i: i}) %>");
+<% end %>

@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def index
-    #ログイン中ならユーザの情報を取得
     if logged_in?
       @user = current_user
     end

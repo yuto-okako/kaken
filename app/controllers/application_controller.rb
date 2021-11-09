@@ -8,6 +8,9 @@ class ApplicationController < ActionController::Base
   before_action :const
   
   def const
+    if logged_in?
+      @head_user = current_user
+    end
     @health_check = ['頭痛', '腹痛', 'のどの痛み', '咳', '倦怠感', 'くしゃみ・鼻水', '下痢・嘔吐', 'めまい']
     @check_list = ['外出時はマスクを着けましたか？', '適時手指消毒をしましたか？', '３密を避けましたか？']
   end

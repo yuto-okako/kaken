@@ -17,4 +17,8 @@ Rails.application.routes.draw do
   get '/mix/:id'    , to: 'games#mixing', as: :games_mixing
   get  '/list'      , to: 'games#list'
   get  '/have'      , to: 'games#have'
+  
+  namespace :mails do 
+    resources :searches, only: :index, defaults: { format: :json }
+  end
 end

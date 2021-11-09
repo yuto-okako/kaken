@@ -13,6 +13,11 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+      <%= render './users_header' %>
+    <% else %>
+      <%= render './top_header' %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
