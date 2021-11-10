@@ -78,9 +78,10 @@
 }
 
 .login-error {
-  text-align: center;
+  width: 30rem;
   padding: .5rem;
-  margin-bottom: 2rem;
+  margin: 0 auto 2rem auto;
+  text-align: center;
   border: 3px solid #DC143C;
   color: #FF0000;
   background-color: #FFB6C1;

@@ -1,1 +1,1 @@
-<%= link_to '合成する', games_mixing_path(i), remote: true, class: "#{'disabled' unless mixable?(i)}", id: "mix-btn#{i}" %>
+<%= link_to '合成する', games_mixing_path(i), remote: true, class: "mix-btn #{'disabled' unless mixable?(i)}", id: "mix-btn#{i}" %>

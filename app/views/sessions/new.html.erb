@@ -1,6 +1,6 @@
 <h2 class="form-title">ログイン</h2>
 <% if @error %> 
-  <div class="login-error">メールアドレスまたはパスワードに誤りがあります。</div>
+  <div class="login-error">メールアドレスまたはパスワードに<br>誤りがあります。</div>
 <% end %>
 <%= form_for :session, url: login_path, html: {class: 'user_form'} do |f| %>
   <div class="form-item">

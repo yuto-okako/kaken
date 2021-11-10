@@ -20,15 +20,6 @@ class GamesController < ApplicationController
       end
       item = items.sample
       item_save(item)
-      #if UserItem.find_by(user_id: current_user.id, item_master_id: item.id)
-      #  user_item = UserItem.find_by(user_id: current_user.id, item_master_id: item.id)
-      #  new_num = user_item.num + 1
-      #  user_item.update(num: new_num)
-      #else
-      #  user_item = current_user.user_items.build(item_master_id: item.id, num: 1)
-      #  user_item.save
-      #end
-      
       profile = Profile.find_by(user_id: current_user.id)
       new_point = point - use_point
       profile.update(point: new_point)

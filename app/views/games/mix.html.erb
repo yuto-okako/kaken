@@ -1,8 +1,14 @@
 <h1>アイテム合成</h1>
 <% @mix.each do |g| %>
   <div class="mix-area">
-    <%= image_tag ItemMaster.find_by(name: g.generation).path, size: '300x300' %>
-    <!--<%= link_to '合成する', games_mixing_path(g.id), remote: true, class: "#{'disabled' unless mixable?(g.id)}", id: "mix-btn#{g.id}" %>-->
+    <% if UserItem.find_by(user_id: current_user.id, item_master_id: ItemMaster.find_by(name: g.generation).id) %>
+      <%= image_tag ItemMaster.find_by(name: g.generation).path, class: 'gene-img' %>
+    <% else %>
+      <%= image_tag 'unknown.png', class: 'gene-img' %>
+    <% end %>
+    <% g.material.split('/').each do |m| %>
+      <%= image_tag  ItemMaster.find_by(name: m).path, class: 'mt-img' %>
+    <% end %>
     <%= render partial: 'mix_btn', locals: {i: g.id} %>
   </div>
 <% end %>
