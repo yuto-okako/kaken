@@ -1,7 +1,7 @@
-<h1>健康観察</h1>
+<%= stylesheet_link_tag 'temperature' %>
+
 <% if inputed? %>
   <%= render 'inputed' %>
 <% else %>
   <%= render 'health_check' %>
 <% end %>
-<%= link_to 'マイページに戻る', root_path %>

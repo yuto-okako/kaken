@@ -1,0 +1,329 @@
+$bgClr: #FFFAFA;
+$lnClr: #FFE3AF;
+
+@mixin healthTh($bgClr) {
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 0 5px rgba(0,0,0,.2);
+  background: $bgClr;
+}
+
+@mixin healthTd($bgClr) {
+  text-align: center;
+  border-bottom: 1px solid #525252;
+  box-shadow: 0 0 5px rgba(0,0,0,.2);
+  background: $bgClr;
+}
+
+.report-title {
+  position: relative;
+  display: inline-block;
+  padding: 0.3rem 3rem 0.1rem 6rem;
+  font-size: 2.1rem;
+  border-radius: 20px;
+  color: #474747;
+  background: #a0d7f6;
+}
+
+.report-title::before {
+  font-family: "Font Awesome 6 Free";
+  content: '\f249';
+  font-weight: 900;
+  position: absolute;
+  display: inline-block;
+  left: -.4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  width: 4rem;
+  height: 4rem;
+  font-size: 2.3rem;
+  line-height: 4rem;
+  border: solid 3px #FFF;
+  border-radius: 50%;
+  color: #747474;
+  background: #90dcff;
+}
+
+.health-table {
+  width: 100%;
+  table-layout: fixed;
+  border: none;
+  border-collapse: separate;
+  border-spacing: 7px 0px;
+  
+  
+  .health-th-org {
+    @include healthTh(#FFA500);
+  }
+  
+  .health-th-gre {
+    @include healthTh(#C4FF89);
+  }
+  
+  .health-th-ble {
+    @include healthTh(#81d4fa);
+  }
+  
+  .health-td-org {
+    @include healthTd(#FFF6E5);
+    font-size: 1.3rem;
+  }
+  
+  .health-td-gre {
+    @include healthTd(#F1FFE2);
+  }
+  
+  .health-td-ble {
+    @include healthTd(#F2F5FC);
+    font-size: 1.4rem;
+  }
+  
+  .good-feel::before {
+    font-family: "Font Awesome 6 Free";
+    content: '\f580';
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+	  align-items: center;
+    font-size: 2rem;
+    color: #91BAF4;
+  }
+  
+  .high-temp, .not-feel {
+    background: #FFB5B5;
+  }
+}
+
+.report-table th, .report-table td {
+  border: 1px solid #000;
+}
+
+.filter_form {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding: 1.5rem .5rem;
+  border-radius: 10px;
+  border: solid 1.5px #94A0A7;
+  
+  .filter-text {
+    display: inline-block;
+    padding: 0 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    border-bottom: solid 2px #6495ED;
+  }
+  
+  .date-field-wrapper {
+    margin-bottom: 1.5rem;
+    
+    .date-field {
+      padding: .3rem;
+      width: 45%;
+      border-radius: 5px;
+      border: solid 2px #5EA6B5;
+      color: #767676;
+    }
+    
+    .date-field:focus {
+      border: solid 3px #3C42C3;
+      outline: none;
+    }
+  }
+  
+  .radio-field-wrapper {
+    margin-bottom: 2rem;
+    
+    .radio-field + .radio-label {
+      padding-left: 2rem;
+      font-size: 1.4rem;
+      position: relative;
+      margin: 0 1rem;
+    }
+  
+    .radio-field + .radio-label::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: .4rem;
+      left: 0;
+      width: 1.3rem;
+      height: 1.3rem;
+      border: 1px solid #999;
+      border-radius: 50%;
+      background: #FFF;
+    }
+  
+    .radio-field:checked + .radio-label {
+      color: #D01137;
+    }
+  
+    .radio-field:checked + .radio-label::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: .7rem;
+      left: .3rem;
+      width: .9rem;
+      height: .9rem;
+      background: #D01137;
+      border-radius: 50%;
+    }  
+  }
+
+  .btn {
+    border: none;
+    margin: 0 3rem;
+    width: 25%;
+    border-radius: 5px;
+  }
+
+  .btn:active {
+    transform: translateY(2px);
+    border-bottom: none;
+    box-shadow: none;
+  }
+
+  .reset-btn {
+    border-bottom: solid 3px #BEAB00;
+    background: #F0E68C;
+  }
+
+  .exe-btn {
+    border-bottom: solid 3px #49A249;
+    background: #92DA92;
+  }
+}
+
+.check-table {
+  width: 100%;
+  border: none;
+  border-collapse: collapse;
+  
+  .check-th-org {
+    @include healthTh(#FFA500);
+    border-right: solid 5px #f4fffa;
+  }
+  
+  .check-th-ble {
+    @include healthTh(#81d4fa);
+    border-bottom: 1px solid #2185a2;
+  }
+  
+  .check-th-sub {
+    background: #81d4fa;
+  }
+  
+  .check-td-ble {
+    @include healthTd(#F2F5FC);
+  }
+  
+  .check-td-org {
+    @include healthTd(#FFF6E5); 
+    border-right: solid 5px #f4fffa;
+  }
+  
+  .not-achieve {
+    background: #FFB5B5;
+  }
+}
+
+.check-table-help {
+  margin-left: auto;
+  margin-bottom: 1.5rem;
+  padding-top: .1rem;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+  width: 3rem;
+  height: 3rem;
+  border: solid 3px #3247d1;
+  background: #6bdc73;
+  color: #8053d8;
+}
+
+.ch-tbl-help-modal {
+  padding: 1.5rem;
+  border: solid 5px #7a92e8;
+  background: #e7feff;
+  
+  .ch-modal-text {
+    text-align: center;
+  }
+  
+  .list-wrapper {
+    margin: 2rem 0;
+    
+    .list {
+      font-weight: bold;
+      color: #f373ae;
+    }
+  }
+  
+  .ch-help-close {
+    width: 40%;
+    text-align: center;
+    padding: .5rem 0;
+    margin: 0 auto;
+    border-radius: 15px;
+    font-weight: bold;
+    background-color: #a3c3f8;
+  }
+}
+
+/*--- タブ実装部分 ---*/
+.tab-wrapper{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/*タブの下の線*/
+.tab-wrapper::after {
+	content: '';
+	width: 100%;
+	height: 3px;
+	order: -1;
+	display: block;
+	background: rgba(0,137,167,.7);
+}
+
+/* タブ */
+.tab-label {
+	margin-right: 3px;
+	padding: 3px 12px;
+	flex: 1;
+	order: -1;
+	text-align: center;
+	border-radius: 3px 3px 0 0;
+	color: #444;
+	background: rgba(0,137,167,.3);
+	transition: .5s ;
+	cursor: pointer;
+}
+
+.tab-label:nth-last-of-type(1) { 
+  margin-right: 0;
+}
+
+/* 本文 */
+.tab-content {
+	width: 100%;
+	height: 0;
+	overflow: hidden;
+	opacity: 0;
+	background: #F4FFFA;
+}
+
+/*アクティブ設定*/
+input:checked + .tab-label {
+	color: #fff;
+	background: rgba(0,137,167,.7);
+}
+
+input:checked + .tab-label + .tab-content {
+	padding: 15px;
+	height: auto;
+	overflow: auto;
+	box-shadow: 0 0 5px rgba(0,0,0,.2);
+	transition: .5s opacity;
+	opacity: 1;
+}

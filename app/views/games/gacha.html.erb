@@ -1,4 +1,31 @@
-<h2>ガチャ</h2>
-<%= link_to 'ガチャを引く', get_gacha_path, method: :post, remote: true %>
-<%= link_to 'ゲームページに戻る', games_path %>
+<%= stylesheet_link_tag 'gacha' %>
+
+<div class="game-title-container">
+  <%= link_to image_tag('arrow-icon.png', class: 'arrow-img'), games_path, class: 'game-back' %>
+  <div class="game-title">ガチャ</div>
+</div>
+
+<div class="gacha-wrapper">
+  <%= image_tag 'gacha-show.png', class: 'gacha-img' %>
+  <div class="btn-wrapper">
+    <%= link_to 'ガチャる', get_gacha_path, method: :post, remote: true, class: 'gacha-btn' %>
+    <div class="open-modal detail" data-target="detail-modal">詳細</div>
+  </div>
+</div>
+
+<div id="detail-modal" class="modal-area">
+  <div class="modal-bg"></div>
+  <div class="modal-wrapper detail-modal">
+    <div class="modal-content">
+      <div class="detail-title">排出確率</div>
+      <ul>
+        <li class="list">★5：3%</p>
+        <li class="list">★4：10%</p>
+        <li class="list">★3：87%</p>
+      </ul>
+    </div>
+    <div class="close-modal detail-close">閉じる</div>
+  </div>
+</div>
+
 <div id="gacha-result"></div>

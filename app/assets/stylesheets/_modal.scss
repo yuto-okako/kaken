@@ -1,4 +1,4 @@
-$modal_index: 10;
+$modal_index: 999;
 
 .modal-area {
   display: none;
@@ -22,27 +22,10 @@ $modal_index: 10;
   top: 50%;
   left: 50%;
   transform:translate(-50%,-50%);
-  /*overflow: auto;
-  height: 70%;*/
+  overflow: auto;
+  max-height: 80%;
   width: 90%;
   max-width: 500px;
-  padding: 10px 30px;
-  background-color: #fff;
-}
-
-.close-modal {
-  width: 40%;
-  text-align: center;
-  margin: 0 auto;
-  margin-bottom: 1rem;
-  background-color: blue;
-}
-
-/*.open-modal*/ .test {
-  padding: 10px;
-  background-color: #fff;
-  border: 1px solid #282828;
-  border-radius: 2px;
 }
 
 .no-scroll {

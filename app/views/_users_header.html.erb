@@ -1,4 +1,18 @@
 <header class="header users_header">
-  <p><%= @head_user.name %></p>
-  <div id="point"><%= render partial: './point' %></div>
+  <%= render partial: './point' %>
+  <div class="name"><%= @user.name %></div>
+  <div class="open-modal option" data-target="option-modal"></div>
 </header>
+
+<div id="option-modal" class="modal-area">
+  <div class="modal-bg"></div>
+  <div class="modal-wrapper option-modal">
+    <div class="modal-content">
+      <div class="op-title">オプション</div>
+      <%= link_to 'プロフィール設定', edit_user_path(@user.id), class: 'op-prof' %>
+      <%= link_to '実績', '#' ,class: 'op-achieve' %>
+      <%= link_to 'ログアウト', logout_path, method: :delete, class: 'op-logout' %>
+    </div>
+    <div class="close-modal op-close">閉じる</div>
+  </div>
+</div>

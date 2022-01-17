@@ -1,10 +1,138 @@
-@import "./header";
+@import "header";
+
+@mixin modalBase($clr) {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+  padding: .5rem 0;
+  text-decoration: none;
+  width: 80%;
+  height: 4rem;
+  border-radius: 5px;
+  border: solid 1.5px #808080;
+  font-weight: bold;
+  color: $clr; 
+}
+
+@mixin modalBaseIcon($icon) {
+  font-family: "Font Awesome 6 Free";
+  content: $icon;
+  font-weight: 900;
+  display: inline-block;
+  font-size: 2.5rem;
+  padding: 0 1rem 0 2rem;
+  width: 15%;
+  color: #C0C0C0;
+}
 
 .users_header {
   position: fixed;
-  background-color: red;
+  justify-content: space-around;
+  background: linear-gradient(180deg, #41A4FD, #28E0E9);
+  box-shadow: 0 2px 2px rgba(0,0,0,0.2), 0 -4px 5px -2px #6D95CE inset;
 }
 
-#point {
-  margin-left: 5rem;
+.point-text {
+  position: relative;
+  display: inline-block;
+  padding: 0.12rem 2rem 0.12rem 3.5rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  border-radius: 20px;
+  border: solid 2px #8B4513;
+  color: #2E2E2E;
+  background: #E0A963;
+}
+
+.point-img {
+  position: absolute;
+  display: inline-block;
+  left: -.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  padding: .1rem;
+  border: solid 2px #FFF; 
+  border-radius: 50%;
+  background: #000;
+}
+
+.name {
+  font-weight: bold;
+  padding: 0.3rem 2rem;
+  border-radius: 20px;
+  border: solid 2px #00008B;
+  color: #2E2E2E;
+  background: #6495ED;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+	justify-content: center;
+	width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: solid 3px #808080;
+  background: #ADD8E6;
+}
+
+.option::before {
+  font-family: "Font Awesome 6 Free";
+  content: '\f013';
+  font-weight: 900;
+  display: inline-block;
+  font-size: 2.5rem;
+  color: #808080;
+}
+
+.option-modal {
+  padding: 2rem 0;
+  background: #FFFAFA;
+  
+  .op-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .op-prof {
+    @include modalBase(#00BFFF);
+  }
+  
+  .op-prof::before {
+    @include modalBaseIcon('\f007');
+  }
+  
+  .op-achieve {
+    @include modalBase(#00BFFF);
+  }
+  
+  .op-achieve::before {
+    @include modalBaseIcon('\f091');
+  }
+  
+  .op-logout {
+    @include modalBase(#FF1493);
+  }
+  
+  .op-logout::before {
+    @include modalBaseIcon('\f08b');
+  }
+  
+  .op-close {
+    margin: 0 auto;
+    padding: 0.5rem 0;
+    width: 50%;
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 20rem;
+    border-bottom: .3rem solid #778899;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+    color: #FF69B4;
+    background-color: #ADD8E6;
+  }
 }

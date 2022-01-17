@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
-  root 'users#index'      #トップページへのルーティング
+  root 'users#index'
 
   get    '/login',  to: 'sessions#new'      #ログイン
   post   '/login',  to: 'sessions#create'   #ログイン
   delete '/logout', to: 'sessions#destroy'  #ログアウト
   
   resources :users
+  
   resources :temperatures
+  get '/filter', to: 'temperatures#filter'
+  
   resources :checks
   resources :missions
   resources :games

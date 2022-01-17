@@ -1,7 +1,7 @@
-<h1>項目チェック</h1>
+<%= stylesheet_link_tag 'check' %>
+
 <% if checked? %>
   <%= render 'checked' %>
 <% else %>
   <%= render 'check' %>
 <% end %>
-<%= link_to 'マイページに戻る', root_path %>

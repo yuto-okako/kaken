@@ -1,0 +1,97 @@
+.mission {
+  display: inline-block;
+  position: relative;
+  
+ .mission-btn-img {
+    width: 8rem;
+    border-radius: 50%;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+    border: solid 3px #1a57d9;
+    background: linear-gradient(0deg, #47d645, #fff81e);
+  }
+  
+  .mission-appear {
+    position: absolute;
+    top: 5%;
+    left: 78%;
+    text-align: center;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50%;
+    border: solid 2px #000;
+    background: #FF0000;
+    color: #FFF81E;
+  }
+}
+
+.mission-modal {
+  padding: 1rem;
+  border: solid 5px #c38c3c;
+  background: #ffe1b5;
+  
+  .mission-title {
+    display: inline-block;
+    padding: 0 1rem;
+    margin-left: 2rem;
+    font-weight: bold;
+    font-size: 3rem;
+    font-family: "Courier";
+    border-bottom: solid 5px #966100;
+  }
+  
+  .mission-close {
+    position: absolute;
+    top: 1rem;
+    left: 85%;
+    width: 10%;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 50%;
+    border: solid 3px #6b4207;
+    background: #ddab1d;
+  }
+  .mission-list-wrapper {
+    margin: 2rem 1rem;
+    
+    .mission-list {
+      display: flex;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: solid 2px #96722f;
+      
+      .mission-text {
+        margin-right: auto;
+        font-weight: bold;
+        font-size: 1.7rem;
+        color: #472305;
+      }
+      
+      .get-btn {
+        display: inline-block;
+        text-decoration: none;
+        width: 8.5rem;
+        text-align: center;
+        padding: 0.3rem 0.8rem 0.2rem 0.8rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        border-radius: 5px;
+        border-bottom: solid 3px #6b4711;
+        color: #ca0000;
+        background: #de9932;
+      }
+      
+      .non-get {
+        font-weight: normal;
+        border-bottom: solid 3px #3a3838;
+        color: #b9b9b9;
+        background: #72706c;
+      }
+    }
+    .mission-list:last-child {
+      padding-bottom: 2rem;
+      border-bottom: solid 2px #96722f;
+    }
+  }
+}

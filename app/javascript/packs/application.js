@@ -5,5 +5,7 @@ require("channels");
 require("jquery");
 
 require("modal.js");
+require("no_scale.js");
 require("syonsyon.js");
-require("validation.js");
+require("form_validation.js");
+require("temp_validation.js");

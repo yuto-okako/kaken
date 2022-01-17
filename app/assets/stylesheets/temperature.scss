@@ -1,0 +1,82 @@
+@import "check_base";
+@include checkBaseBg(#D9ECFF);
+@include checkCheckList(#4682B4, 6.5rem);
+
+.temp-title {
+  background: #FFD98A;
+}
+
+.temp-title::before {
+  content: "\f0f0";
+  line-height: 3.7rem;
+  background: #FFA337;
+}
+
+.temp_form {
+  border: solid 3px #D2691E;
+  background-color: #FAEBD7;
+}
+
+.temp-input {
+  position: relative;
+}
+
+.temp-input::before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f2cb";
+  font-weight: 900;
+  position: absolute;
+  left : -.3rem;
+  top: 68%;
+  transform: translateY(-50%);
+  text-align: center;
+  font-size: 2rem;
+  width: 2rem;
+  height: 2rem;
+  padding: .5rem;
+  border-radius: 5px 0 0 5px;
+  background: #EE82EE;
+}
+
+.temp-input-text {
+  display: inline-block;
+  font-size: 1.7rem;
+  height: 3rem;
+  line-height: 3rem;
+  padding: 0 2rem 0 3.5rem;
+  border-radius: 20px;
+  background: #D8BFD8;
+}
+
+.temp-field {
+  width: 6rem;
+  height: 2.5rem;
+  font-size: 1.6rem;
+  text-align: center;
+  margin: 2rem 0 0 1.5rem;
+  padding: .5rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #222222;
+}
+
+.temp-field:focus {
+  border: solid 3.5px #9ACD32;
+  outline: none;
+}
+
+.temp-error {
+  padding-left: 16.5rem;
+  font-size: 1.3rem;
+  color: #FF0000;
+}
+
+.temp-check-wrapper {
+  padding: .5rem 0;
+  margin-top: 1.5rem;
+  border-top: dashed 1px #D2691E;
+  border-bottom: dashed 1px #D2691E;
+}
+
+.temp-btn {
+  background: #2E8B57;
+}

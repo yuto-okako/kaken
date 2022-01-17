@@ -1,0 +1,28 @@
+<%= stylesheet_link_tag 'profile' %>
+
+<h2 class="prof-title">プロフィール設定</h2>
+
+<%= form_for @user, html: {class: 'prof_form'} do |f| %>
+  <div class="accent-line prof-text">ニックネーム<span class="prof-text-grey">(８文字以内)</span></div>
+  <%= f.text_field :name, {maxlength: 8, class: 'prof-field js-name-field'} %>
+  <div class="error-msg js-name-error"></div>
+  <%= f.submit '変更', class: 'prof-btn js-form-btn' %>
+<% end %>
+
+<div class="accent-line delete-title">アカウント削除</div>
+<p class="delete-text">※削除したアカウントは復元することができません。</p>
+<div class="open-modal delete" data-target="delete-modal">削除</div>
+
+<div id="delete-modal" class="modal-area">
+  <div class="modal-bg"></div>
+  <div class="modal-wrapper delete-modal">
+    <div class="modal-content">
+      <p class="dl-text">！削除したアカウントは復元できません！</p>
+      <div class="dl-conf">本当に削除しますか？</div>
+      <div class="dl-btn-wrapper">
+        <%= link_to '削除', user_path(@user.id), method: :delete, class: 'dl-yes' %>
+        <div class="close-modal dl-no">やめる</div>
+      </div>
+    </div>
+  </div>
+</div>

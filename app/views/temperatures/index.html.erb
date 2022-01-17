@@ -1,0 +1,85 @@
+<%= stylesheet_link_tag 'report' %>
+
+<h2 class="report-title">健康レポート</h2>
+
+<div class="tab-wrapper">
+  <input id="health" class="input-hidden" type="radio" name="report-tab" checked="checked">
+	<label class="tab-label" for="health">健康データ</label>
+	<div class="tab-content">
+    <%= form_with scope: :health_filter, url: filter_path, method: :get, html: {class: 'filter_form'} do |f| %>
+      <div class="filter-text">絞り込み</div>
+      <div class="date-field-wrapper"><%= f.date_field :day_from, class: 'date-field' %> ~ <%= f.date_field :day_to, class: 'date-field' %></div>
+      <div class="radio-field-wrapper">
+        <%= f.radio_button :health, :yes, class: 'radio-field input-hidden' %>
+        <%= f.label :health, '体調不良あり', {value: :yes, class: 'radio-label'} %>
+        <%= f.radio_button :health, :no, class: 'radio-field input-hidden' %>
+        <%= f.label :health, '体調不良なし', {value: :no, class: 'radio-label'} %>
+      </div>
+      <div class="btn-wrapper">
+        <%= f.button 'クリア', type: :reset, class: 'btn reset-btn' %>
+        <%= f.submit '絞り込み', class: ' btn exe-btn' %>
+      </div>
+    <% end %>
+
+    <table class="health-table">
+      <thead>
+        <tr>
+          <th class="health-th-org">日付</th>
+          <th class="health-th-gre">体温</th>
+          <th class="health-th-ble">体調不良</th>
+        </tr>
+      </thead>
+      <%= render 'health_table' %>
+    </table>
+	</div>
+	<input id="check" class="input-hidden" type="radio" name="report-tab">
+	<label class="tab-label" for="check">行動データ</label>
+	<div class="tab-content">
+	  <div class="open-modal check-table-help" data-target="ch-tbl-help-modal">?</div>
+	  <table class="check-table">
+      <thead>
+        <tr>
+          <th rowspan="2" class="check-th-org">日付</th>
+          <th colspan="6" class="check-th-ble">達成項目</th>
+        </tr>
+        <tr>
+          <th class="check-th-sub">①</th>
+          <th class="check-th-sub">②</th>
+          <th class="check-th-sub">③</th>
+          <th class="check-th-sub">④</th>
+          <th class="check-th-sub">⑤</th>
+          <th class="check-th-sub">⑥</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @checks.each do |c| %>
+          <tr>
+            <td class="check-td-org"><%= c.date %></td>
+            <% beforeShow(c.achieve) %>
+            <% for i in 1..6 %>
+              <td class="check-td-ble <%= 'not-achieve' unless @res.include?(i.to_s) %>"><%= @res.include?(i.to_s) ? '○' : '×' %></td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+	</div>
+</div>
+
+<div id="ch-tbl-help-modal" class="modal-area">
+  <div class="modal-bg"></div>
+  <div class="modal-wrapper ch-tbl-help-modal">
+    <div class="modal-content">
+      <div class="ch-modal-text">達成項目の番号は以下の通りです。</div>
+      <div class="list-wrapper">
+        <div class="list">① 外出時はマスク着用</div>
+        <div class="list">② こまめに手洗い・手指消毒</div>
+        <div class="list">③ ３密(密集・密接・密閉)の回避</div>
+        <div class="list">④ 帰宅後、まず手洗い</div>
+        <div class="list">⑤ ソーシャルディスタンス(最低１m)</div>
+        <div class="list">⑥ 時差通勤・時差通学</div>
+      </div>
+    </div>
+    <div class="close-modal ch-help-close">閉じる</div>
+  </div>
+</div>

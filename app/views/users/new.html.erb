@@ -1,7 +1,9 @@
+<%= stylesheet_link_tag 'user_form' %>
+
 <h2 class="form-title">新規登録</h2>
 <%= form_for @user, html: {class: 'user_form'} do |f| %>
   <div class="form-item">
-    <%= f.text_field :name, placeholder: "名前", class: 'form-field js-name-field' %>
+    <%= f.text_field :name, {placeholder: "ニックネーム(８文字以内)", maxlength: 8, class: 'form-field js-name-field'} %>
     <div class="error-msg js-name-error"></div>
   </div>
   <div class="form-item">

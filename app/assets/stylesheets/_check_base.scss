@@ -1,0 +1,132 @@
+$bgClr: #F8F8FF;
+
+@mixin checkBaseBg($lnClr) {
+  body {
+    background:
+linear-gradient(135deg, $bgClr 2.1rem, $lnClr 2.2rem, $lnClr 2.4rem, transparent 2.4rem, transparent 6.7rem, $lnClr 6.7rem, $lnClr 6.9rem, transparent 6.9rem),
+linear-gradient(225deg, $bgClr 2.1rem, $lnClr 2.2rem, $lnClr 2.4rem, transparent 2.4rem, transparent 6.7rem, $lnClr 6.7rem, $lnClr 6.9rem, transparent 6.9rem)0 6.4rem;
+    background-color: $bgClr;
+    background-size: 6.4rem 12.8rem;
+  }
+}
+
+@mixin checkCheckList($bgClr, $pdLeft) {
+  .check-base_cl {
+    display: flex;
+    padding: .5rem 0 .5rem $pdLeft;
+  }
+
+  .check-base_cl-label{
+    display: flex;
+    align-items: center;
+  }
+
+  .check-base_cl-input:checked + .check-base_cl-dummy {
+    background: $bgClr;
+  }
+
+  .check-base_cl-input:checked + .check-base_cl-dummy::before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f00c";
+    font-weight: 900;
+    display: block;
+    position: absolute;
+    top: 7%;
+    left: 7%;
+    width: 1.3rem;
+    height: 1.3rem;
+    color: #FFF;
+  }
+
+  .check-base_cl-dummy {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    border: solid 1px #000;
+    background: #FFF;
+    border-radius: 50%;
+    transition: all .15s linear;
+  }
+
+  .check-base_cl-text {
+    margin-left: 1.2rem;
+    display: block;
+  }
+}
+
+.check-base_title {
+  position: relative;
+  display: inline-block;
+  padding: 0.3rem 3rem 0.1rem 6rem;
+  font-size: 2.1rem;
+  border-radius: 20px;
+  color: #474747;
+}
+
+.check-base_title::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  display: inline-block;
+  left: -.4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  width: 4rem;
+  height: 4rem;
+  font-size: 2.3rem;
+  border: solid 3px #FFF; 
+  border-radius: 50%;
+  color: #FFF;
+}
+
+.check-base_form {
+  padding: 0 2rem;
+  border-radius: 15px;
+}
+
+.check-base_btn {
+  display: block;
+  padding: .5rem calc(3rem - .5em) .5rem 3rem;
+  margin: 1.5rem auto;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.6rem;
+  letter-spacing: .5em;
+  color: #FFF;
+}
+
+.check-base_wrapper {
+  /*-- 子要素を上下中央配置 --*/
+  display: flex;
+  flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	/*-- wrapper自体を上下中央配置 --*/
+  position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	
+	width: 85%;
+  height: 30%;
+  border: 4px solid #000;
+  border-image: linear-gradient(90deg, #FF6161, #E9B22D 20%, #C0CA4B 34%, #35B338 58%, #566EF3 79%, #9A27EE);
+  border-image-slice: 1;
+	background: #F8F8FF;
+}
+
+.check-base_hnd {
+  font-family: "Arial Black";
+  border-bottom: 4px solid #000;
+  border-image: linear-gradient(90deg, #3DC8C2, #CED800 30%, #ffae44 74%, #EA7200);
+  border-image-slice: 1;
+}
+
+.check-base_comm {
+  font-weight: bold;
+}

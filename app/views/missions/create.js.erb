@@ -1,2 +1,3 @@
-$('#point').html("<%= j(render partial: './point') %>");
+$('.point-text').replaceWith("<%= j(render partial: './point') %>");
 $('#mission-btn<%= @id %>').replaceWith("<%= j(render partial: 'users/mission_btn') %>");
+$('.mission-appear').replaceWith("<%= j(render partial: './appear') %>");

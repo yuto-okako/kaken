@@ -1,0 +1,14 @@
+<tbody id="ajax-health_table">
+  <% @temperature.each do |t| %>
+    <% hlt = t.health ? t.health.split(' / ') : [''] %>
+    <tr>
+      <td rowspan="<%= hlt.size %>" class="health-td-org"><%= t.date %></td>
+      <td rowspan="<%= hlt.size %>" class="health-td-gre <%= highTemp(t.taion) %>"><%= t.taion %>℃ </td>
+      <td class="health-td-ble <%= notFeel(hlt[0]) %>"><%= hlt[0] %></td>
+    </tr>
+    <% hlt.each_with_index do |h, i| %>
+      <% next if i == 0 %>
+      <tr><td class="health-td-ble not-feel"><%= h %></td></tr>
+    <% end %>
+  <% end %>
+</tbody>

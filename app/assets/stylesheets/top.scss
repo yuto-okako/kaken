@@ -1,0 +1,27 @@
+body {
+  font-family: 'Noto Sans JP';
+  margin: 0;
+  margin-top: 6rem;
+  background: #FFFAFA;
+}
+
+.top-img {
+  width: 100%;
+}
+
+.sec-1 {
+  margin: 2rem 0;
+  padding: 0.5rem 0 1rem 0;
+  text-align: center;
+  background: linear-gradient(90deg, #8e54db, #58cff3);
+  color: #FFF;
+  
+  .strong {
+    font-weight: bold;
+    font-size: 2rem;
+  }
+}
+
+.show-title {
+  text-align: center;
+}

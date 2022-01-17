@@ -1,0 +1,146 @@
+$bgClr1: #FFFAFA;
+$bgClr2: #EFEFEF;
+
+@mixin profBtn($clr, $bgClr, $lnClr) {
+  padding: 0.5rem 0;
+  text-align: center;
+  font-size: 1.5rem;
+  border-radius: 20rem;
+  border: none;
+  border-bottom: .3rem solid $lnClr;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  color: $clr;
+  background-color: $bgClr;
+}
+
+body {
+  background-color: $bgClr1;
+  background-image: linear-gradient(45deg, $bgClr2 25%, transparent 25%, transparent 75%, $bgClr2 75%, $bgClr2), linear-gradient(45deg, $bgClr2 25%, transparent 25%, transparent 75%, $bgClr2 75%, $bgClr2);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+}
+
+.accent-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.accent-line::before,
+.accent-line::after {
+  content: '';
+  width: 15px;
+  height: 3px;
+  background-color: #696969;
+}
+
+.accent-line::before {
+  margin-right: 15px;
+}
+
+.accent-line::after {
+  margin-left: 15px;
+}
+
+.prof-title {
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  text-align: center;
+  border-bottom: solid 3px #87CEEB;
+}
+
+.prof_form {
+  text-align: center;
+
+  .prof-text {
+    font-weight: bold;
+    
+    .prof-text-grey {
+      color: #808080;
+    }
+  }
+
+  .prof-field {
+    width: 60%;
+    max-width: 400px;
+    font-size: 1.5rem;
+    margin: 1rem 0 .5rem 0;
+    padding: .7rem 1rem;
+    border-radius: 5px;
+    border: 1.5px solid #000;
+  }
+  
+  .error-msg {
+    font-size: 1.4rem;
+    color: #FF0000;
+  }
+  
+  .prof-btn {
+    @include profBtn(#2E2E2E, #87CEEB, #778899);
+    margin-top: 2rem;
+    width: 50%;
+  }
+}
+
+.delete-title {
+  margin: 5rem 0 1rem 0;
+  text-align: center;
+  font-weight: bold;
+  color: #FF0000;
+}
+
+.delete-text {
+  margin: 0 2rem;
+  text-align: center;
+  font-size: 1.4rem;
+  color: #FF0000;
+}
+
+.delete {
+  @include profBtn(#FFF, #FF597A, #B22222);
+  margin: 0 auto;
+  margin-top: 2rem;
+  width: 50%;
+}
+
+.delete-modal {
+  padding: 1.5rem 0 2rem 0;
+  text-align: center;
+  border: solid 6px #DC143C;
+  background: #FFDBE0;
+  
+  .dl-text {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #FF0000;
+  }
+  
+  .dl-conf {
+    display: inline-block;
+    padding: .5rem 2rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    border-radius: 5px;
+    background: #FA8072;
+  }
+  
+  .dl-btn-wrapper {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+    padding: 0 1rem;
+    
+    .dl-yes {
+      @include profBtn(#FFF, #FF597A, #B22222);
+      display: block;
+      width: 35%;
+      text-decoration: none;
+    }
+  
+    .dl-no {
+      @include profBtn(#2E2E2E, #87CEEB, #778899);
+      width: 35%;
+    }
+  }
+}

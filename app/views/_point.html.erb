@@ -1,1 +1,4 @@
-<p><%= current_user.profile.point %>pt</p>
+<div class="point-text">
+  <%= image_tag 'point-icon.png', class: 'point-img' %>
+  <%= @user.profile.point %>
+</div>

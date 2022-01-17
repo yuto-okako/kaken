@@ -32,3 +32,15 @@ def get_point
     return pnt
   end
 end
+
+def appear?
+  flg = false
+  for i in 1..2
+    if btn_str(i) == 'GET!'
+      flg = true
+      break
+    end
+  end
+  
+  return flg
+end

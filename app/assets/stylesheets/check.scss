@@ -1,0 +1,51 @@
+@import "check_base";
+@include checkBaseBg(#FFE4E1);
+@include checkCheckList(#32CD32, 1rem);
+
+.check-title {
+  background: #FA8072;
+}
+
+.check-title::before {
+  content: "\f0ae";
+  line-height: 3.9rem;
+  background: #DC143C;
+}
+
+.check_form {
+  border: solid 3px #7B68EE;
+  background-color: #F0FFF0;
+}
+
+.check-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 0;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #D2691E;
+}
+
+.check-text::before,
+.check-text::after {
+  display: inline-block;
+  content: '';
+  border-radius: 100%;
+  margin: 0 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #BC8F8F;
+}
+
+.check-check-wrapper {
+  padding: .5rem 0;
+  margin-top: 1.5rem;
+  border-top: dashed 1px #BC8F8F;
+  border-bottom: dashed 1px #BC8F8F;
+}
+
+.check-btn {
+  background: #6495ED;
+}

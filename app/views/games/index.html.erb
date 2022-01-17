@@ -1,6 +1,8 @@
-<h1>ゲームページ</h1>
-<%= link_to 'ガチャ', gacha_path %>
-<%= link_to 'アイテム合成', mix_path %>
-<%= link_to 'アイテムリスト', have_path %>
-<%= link_to 'アイテム図鑑', list_path %>
-<%= link_to 'マイページに戻る', root_path %>
+<%= stylesheet_link_tag 'game_top' %>
+
+<h2 class="game-title">ミニゲーム</h2>
+
+<%= link_to 'ガチャ', gacha_path, class: 'game-link' %>
+<%= link_to 'アイテム合成', mix_path, class: 'game-link' %>
+<%= link_to 'アイテム一覧', have_path, class: 'game-link' %>
+<%= link_to 'アイテム図鑑', list_path, class: 'game-link' %>

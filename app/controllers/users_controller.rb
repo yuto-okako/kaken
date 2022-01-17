@@ -1,8 +1,5 @@
 class UsersController < ApplicationController
   def index
-    if logged_in?
-      @user = current_user
-    end
   end
   
   def new
@@ -19,6 +16,16 @@ class UsersController < ApplicationController
     else
       render 'users/new'
     end
+  end
+  
+  def edit
+    @user = User.find(params[:id])
+  end
+  
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    redirect_to edit_user_path(@user.id)
   end
   
   def destroy

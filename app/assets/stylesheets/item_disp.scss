@@ -1,10 +1,59 @@
+@import "game_base";
+@include gameTitle(65%);
+
 .wrap-item-disp {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  margin-top: 1rem;
 }
 
 .item-item-disp {
   padding: 0.5rem;
   width: calc((100% - 0.5rem * 3) / 4);
+}
+
+.item-disp-img {
+  border: solid 3px #FFFF00;
+}
+
+.item-modal {
+  padding: 1rem;
+  text-align: center;
+  border: solid 3.5px #FFFF00;
+  background: #00008B;
+  color: #FFF;
+  
+  .item-name {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 1rem 0 2.5rem 0;
+    padding: 0 3rem;
+    border-left: solid 5px #FFF;
+    border-right: solid 5px #FFF;
+    color: #00CED1;
+  }
+  
+  .item-img {
+    width: 50%;
+    border: solid 5px #FFFF00;
+  }
+  
+  .item-exp {
+    margin: 2.5rem 2rem 0 2rem;
+    padding: 1rem;
+    border-radius: 5px;
+    background: #6E6E6E;
+  }
+  
+  .item-close {
+    width: 40%;
+    text-align: center;
+    padding: .5rem 0;
+    margin: 1.5rem auto;
+    border-radius: 15px;
+    font-weight: bold;
+    background-color: #7B68EE;
+  }
 }

@@ -1,15 +1,21 @@
-<%= form_for @temperature do |f| %>
+<h2 class="check-base_title temp-title">健康観察</h2>
+<%= form_for @temperature, html: {class: 'check-base_form temp_form'} do |f| %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
-  <p>
-    <%= f.label :taion, '今日の体温:' %>
-    <%= f.number_field :taion, min: 30.0, max: 45.0, step: '0.1' %> ℃
-  </p>
-  <p>
-    <%= f.label :health, '体調不良:' %>
+  <div class="temp-input">
+    <span class="temp-input-text">今日の体温</span>
+    <%= f.number_field :taion, step: '0.1', class: 'temp-field' %> ℃
+  </div>
+  <div class="temp-error"></div>
+  <div class="temp-check-wrapper">
     <% @health_check.each do |health| %>
-      <%= f.check_box :health, {multiple: true}, health, nil %>
-      <%= health %>
+      <div class="check-base_cl">
+        <label class="check-base_cl-label">
+          <%= f.check_box :health, {multiple: true, class: 'input-hidden check-base_cl-input'}, health, nil %>
+          <span class="check-base_cl-dummy"></span>
+          <span class="check-base_cl-text"><%= health %></span>
+        </label>
+      </div>
     <% end %>
-  </p>
-  <%= f.submit '記録' %>
+  </div>
+  <%= f.submit '記録', class: 'check-base_btn temp-btn' %>
 <% end %>

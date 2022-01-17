@@ -1,25 +1,29 @@
-<h2>アイテムリスト</h2>
+<%= stylesheet_link_tag 'item_disp' %>
+
+<div class="game-title-container">
+  <%= link_to image_tag('arrow-icon.png', class: 'arrow-img'), games_path, class: 'game-back' %>
+  <div class="game-title">アイテム一覧</div>
+</div>
+
 <div class="wrap-item-disp">
   <% @items.each do |i| %>
     <% unless @num.find_by(item_master_id: i.id).num == 0 %>
-    <div class="item-item-disp open-modal" data-target="have-modal<%= i.id %>"><%= image_tag i.path %></div>
+    <div class="item-item-disp open-modal" data-target="have-modal<%= i.id %>"><%= image_tag i.path, class: 'item-disp-img' %></div>
     <% end %>
   <% end %>
 </div>
 
-<%= link_to 'ゲームページに戻る', games_path %>
-
 <% @items.each do |i| %>
   <div id="have-modal<%= i.id %>" class="modal-area">
     <div class="modal-bg"></div>
-    <div class="modal-wrapper">
+    <div class="modal-wrapper item-modal">
       <div class="modal-content">
-        <h2 class="item-name"><%= i.name %></h2>
+        <div class="item-name"><%= i.name %></div>
         <%= image_tag i.path, class: 'item-img' %>
-        <p><%= i.explanation %></p>
+        <div class="item-exp"><%= i.explanation %></div>
         <p>所持数：<%= @num.find_by(item_master_id: i.id).num %>個</p>
       </div>
-      <div class="close-modal">閉じる</div>
+      <div class="close-modal item-close">閉じる</div>
     </div>
   </div>
 <% end %>

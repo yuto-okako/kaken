@@ -1,62 +1,30 @@
-<button class="open-modal test" data-target="modal1">ミッション</button>
-<br>
+<%= stylesheet_link_tag 'home' %>
 
-<%= link_to 'ログアウト', logout_path, method: :delete %>
-<%= link_to '削除', user_path(@user.id), method: :delete %>
-<br>
-
-<br>
-<h1>体温データ</h1>
-<% @user.temperatures.each do |t| %>
-  <p><%= t.date %> : <%= t.taion %>℃ , <%= t.health %></p>
-<% end %>
-<h1>チェックデータ</h1>
-<ul>
-<% @user.checks.each do |c| %>
-  <li><%= c.date %> : <%= c.achieve %></li>
-<% end %>
-</ul>
-
-<div class="link-footer-container">
-  <ul class="link-footer">
-    <li class="footer-item">
-      <%= link_to image_tag('home-icon.png', class: 'link-img'), root_path %>
-      <span class="link-text">ホーム</span>
-    </li>
-    <li class="footer-item">
-      <%= link_to image_tag('health-icon.png', class: 'link-img'), new_temperature_path %>
-      <span class="link-text">健康観察</span>
-    </li>
-    <li class="footer-item">
-      <%= link_to '項目チェック', new_check_path %>
-    </li>
-    <li class="footer-item">
-      <%= link_to 'レポート' '/' %>
-    </li>
-    <li class="footer-item">
-      <%= link_to image_tag('game-icon.png', class: 'link-img'), games_path %>
-      <span class="link-text">ミニゲーム</span>
-    </li>
-  </ul>
+<div class="open-modal mission" data-target="mission-modal">
+  <%= image_tag 'mission-icon.png', class: 'mission-btn-img' %>
+  <%= render './appear' %>
 </div>
 
-<div id="modal1" class="modal-area">
+<div id="mission-modal" class="modal-area">
   <div class="modal-bg"></div>
-  <div class="modal-wrapper">
+  <div class="modal-wrapper mission-modal">
     <div class="modal-content">
-      <ul>
-        <li>健康観察をしよう！
+      <div class="mission-title">MISSION</div>
+      <div class="close-modal mission-close">×</div>
+      <div class="mission-list-wrapper">
+        <div class="mission-list">
+          <span class="mission-text">健康観察をしよう！</span>
           <div id="mission-btn1">
-            <%= link_to btn_str(1), {controller: 'missions', action: 'create', number: 1, reward_type: 'point', reward: 1, dayly: true}, method: :post, remote: true, class: "#{'disabled' unless btn_str(1) == 'GET!'}" %>
+            <%= link_to btn_str(1), {controller: 'missions', action: 'create', number: 1, reward_type: 'point', reward: 1, dayly: true}, method: :post, remote: true, class: "get-btn #{'disabled non-get' unless btn_str(1) == 'GET!'}" %>
           </div>
-        </li>
-        <li>項目チェックをしよう！
+        </div>
+        <div class="mission-list">
+          <span class="mission-text">項目チェックをしよう！</span>
           <div id="mission-btn2">
-            <%= link_to btn_str(2), {controller: 'missions', action: 'create', number: 2, reward_type: 'point', reward: get_point, dayly: true}, method: :post, remote: true, class: "#{'disabled' unless btn_str(2) == 'GET!'}" %>
+            <%= link_to btn_str(2), {controller: 'missions', action: 'create', number: 2, reward_type: 'point', reward: get_point, dayly: true}, method: :post, remote: true, class: "get-btn #{'disabled non-get' unless btn_str(2) == 'GET!'}" %>
           </div>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
-    <div class="close-modal">×</div>
   </div>
 </div>

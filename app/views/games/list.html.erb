@@ -1,26 +1,30 @@
-<h2>アイテム図鑑</h2>
+<%= stylesheet_link_tag 'item_disp' %>
+
+<div class="game-title-container">
+  <%= link_to image_tag('arrow-icon.png', class: 'arrow-img'), games_path, class: 'game-back' %>
+  <div class="game-title">アイテム図鑑</div>
+</div>
+
 <div class="wrap-item-disp">
   <% @all_items.each do |all| %>
     <% if UserItem.find_by(user_id: current_user.id, item_master_id: all.id) %>
-      <div class="item-item-disp open-modal" data-target="list-modal<%= all.id %>"><%= image_tag all.path %></div>
+      <div class="item-item-disp open-modal" data-target="list-modal<%= all.id %>"><%= image_tag all.path, class: 'item-disp-img' %></div>
     <% else %>
-      <div class="item-item-disp"><%= image_tag 'unknown.png' %></div>
+      <div class="item-item-disp"><%= image_tag 'unknown.png', class: 'item-disp-img' %></div>
     <% end %>
   <% end %>
 </div>
 
-<%= link_to 'ゲームページに戻る', games_path %>
-
 <% @all_items.each do |i| %>
   <div id="list-modal<%= i.id %>" class="modal-area">
     <div class="modal-bg"></div>
-    <div class="modal-wrapper">
+    <div class="modal-wrapper item-modal">
       <div class="modal-content">
-        <h2><%= i.name %></h2>
-        <%= image_tag i.path %>
-        <p><%= i.explanation %></p>
+        <div class="item-name"><%= i.name %></div>
+        <%= image_tag i.path, class: 'item-img' %>
+        <p class="item-exp"><%= i.explanation %></p>
       </div>
-      <div class="close-modal">×</div>
+      <div class="close-modal item-close">閉じる</div>
     </div>
   </div>
 <% end %>

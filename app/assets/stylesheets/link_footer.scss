@@ -1,15 +1,19 @@
+body {
+  margin-bottom: 7.5rem;  /* フッターとの間隔6rem + α */
+}
+
 .link-footer-container {
   position: fixed;
   left: 0;
   bottom: 0;
-  z-index: 15;
+  z-index: 5;
   width: 100%;
-  background-color: #00FFFF;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.2), 0 -4px 5px -2px #6d95ce inset;
+  background: linear-gradient(0deg, rgba(65, 164, 253, 1), rgba(14, 244, 255, 1));
 }
 
 .link-footer {
   display: flex;
-  align-items: center;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -22,25 +26,33 @@
   align-items: center;
   text-align: center;
   width: 20%;
-  height: auto;
-  padding: .5rem;
+  height: 6rem;
   margin: 0;
-  border-left: 1px solid #AAAAAA;
+  border-left: 1.5px solid #696969;
+  border-top: 1.5px solid #696969;
+  border-bottom: 1.5px solid #696969;
+  box-shadow: 0 -1.2px 3px rgba(0, 0, 0, .3);
 }
 
 .footer-item:last-child {
-  border-right: 1px solid #AAAAAA;
+  border-right: 1.5px solid #696969;
 }
 
 .link-img {
   height: 100%;
+  padding: .2rem .5rem .5rem .5rem;
+  
 }
 
 .link-text {
   position: absolute;
-  top: 0;
-  left: 0;
-  top: 70%;
-  left: 30%;
-  font-size: 1rem;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #783c97;
 }

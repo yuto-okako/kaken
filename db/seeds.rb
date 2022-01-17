@@ -13,5 +13,5 @@
 #ItemMaster.create(path: 'gteat.png', rare: 4, name: 'GO TO EAT 岡山県', explanation: 'お得にお食事！', gacha: true)
 #Mixtune.create(material: '不織布マスク(白)/手作り布マスク', generation: 'ニジューマスク')
 #Mixtune.create(material: '不織布マスク(白)/不織布マスク(桃)/不織布マスク(青)/不織布マスク(黄)/不織布マスク(紫)/不織布マスク(緑)/不織布マスク(黒)', generation: '不織布マスク(箱)')
-ItemMaster.create(path: 'ransom.png', rare: 3, name: 'ランサムウェア', explanation: 'リモート時代被害急増！', gacha: true)
-ItemMaster.where(name: 'アベノマスク').update(rare: 4)
+#ItemMaster.create(path: 'ransom.png', rare: 3, name: 'ランサムウェア', explanation: 'リモート時代被害急増！', gacha: true)
+#ItemMaster.where(name: 'アベノマスク').update(rare: 4)

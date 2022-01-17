@@ -1,11 +1,15 @@
-$header_index: 15;
+$headerIndex: 15;
+
+body {
+  margin-top: 7.5rem;      /* ヘッダーとの間隔6rem + α */
+}
 
 .header {
   width: 100%;
   height: 6rem;
   top: 0;
   left: 0;
-  z-index: $header_index;
+  z-index: $headerIndex;
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
