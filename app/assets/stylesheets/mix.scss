@@ -1,5 +1,5 @@
 @import "game_base";
-@include gameTitle(65%);
+@include gameTitle(70%);
 
 .mix-area {
   display: flex;
@@ -267,4 +267,34 @@
   border-radius: 15px;
   font-weight: bold;
   background-color: #7B68EE;
+}
+
+.mix-result {
+  padding: 2rem;
+  text-align: center;
+  background: #ebe9bb;
+  border: solid 5px #636ccf;
+  
+  .result-title {
+    font-weight: bold;
+    font-size: 2rem;
+    color: #694ae3;
+  }
+    
+  .result-text {
+    margin: 3rem 0;
+    font-weight: bold;
+  }
+  
+  .result-close {
+    margin: 0 auto;
+    padding: 0.5rem 0;
+    width: 50%;
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 20rem;
+    border-bottom: .3rem solid #728036;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+    background-color: #aaee72;
+  }
 }

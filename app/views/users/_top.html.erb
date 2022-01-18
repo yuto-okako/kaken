@@ -1,12 +1,29 @@
 <%= stylesheet_link_tag 'top' %>
 
 <%= image_tag 'top-1.png', class: 'top-img' %>
-<section class="sec-1">
+<section class="sec">
   <p class="strong">コロナ予防を習慣化、それがコロピタ</p>
   <p>日頃の行動を可視化し、ポイントを貯める。<br>毎日の目標で効率的に習慣化します。</p>
 </section>
 
-<h3 class="show-title">機能紹介</h3>
+<h3 class="show-title">コロピタの機能</h3>
+<p class="show-text">
+  コロピタでは以下の４つの機能を提供し、<br>コロナ予防の促進に貢献します。</p>
 <%= image_tag 'top-2.png', class: 'top-img' %>
 <%= image_tag 'top-3.png', class: 'top-img' %>
 <%= image_tag 'top-4.png', class: 'top-img' %>
+<%= image_tag 'top-5.png', class: 'top-img' %>
+
+<section class="sec">
+  <p class="strong">さあ、いますぐ始めよう</p>
+  <p>初めての方はこちら</p>
+  <%= link_to '新規登録', new_user_path, class: 'sec-btn sec-new' %>
+  <p>アカウントをお持ちの方はこちら</p>
+  <%= link_to 'ログイン', login_path, class: 'sec-btn sec-login' %>
+</section>
+
+<footer class="foot">
+  <p>岡山県立岡山工業高等学校 情報技術科３年</p>
+  <p>令和3年度 課題研究 制作物</p>
+  <address class="copy">&copy;2021 COROPITA from OKAKO.</address>
+</footer>
