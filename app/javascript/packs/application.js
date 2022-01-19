@@ -9,3 +9,4 @@ require("no_scale.js");
 require("syonsyon.js");
 require("form_validation.js");
 require("temp_validation.js");
+require("clock.js")

@@ -1,8 +1,27 @@
 <%= stylesheet_link_tag 'home' %>
 
-<div class="open-modal mission" data-target="mission-modal">
-  <%= image_tag 'mission-icon.png', class: 'mission-btn-img' %>
-  <%= render './appear' %>
+<section class="sec">
+  <div class="date">
+    <div class="day"><%= @date %></div>
+    <div class="clock">
+      <span class="hour"></span>
+      <span class="coron"> : </span>
+      <span class="min"></span>
+    </div>
+  </div>
+  <div class="comment">
+    <p class="greet"><%= @greet %></p>
+    <p class="text"><%= @text %></p>
+  </div>
+</section>
+
+<div class="img-wrapper">
+  <%= image_tag 'home-img-2', class: 'img-2' %>
+  <div class="open-modal mission" data-target="mission-modal">
+    <%= image_tag 'mission-icon.png', class: 'mission-btn-img' %>
+    <%= render './appear' %>
+  </div>
+  <%= image_tag 'home-img-1', class: 'img-1' %>
 </div>
 
 <div id="mission-modal" class="modal-area">

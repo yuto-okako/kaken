@@ -1,3 +1,63 @@
+body {
+  margin: 10rem 0;
+  background: #e0e1ff;
+}
+
+.sec {
+  font-family: 'Noto Sans JP';
+  
+  .date {
+    padding: 2rem 0;
+    text-align: center;
+    border-top: solid 2px #808080;
+    border-bottom: solid 2px #808080;
+    color: #FFF;
+    background: linear-gradient(0deg, #54db77, #ba48e9);
+    
+    .day {
+      margin-bottom: .5rem;
+      letter-spacing: .3rem;
+    }
+    
+    .clock {
+      font-size: 4rem;
+    }
+  }
+  
+  .comment {
+    margin-top: 3rem;
+    padding: 1.5rem 0;
+    text-align: center;
+    border-top: solid 2px #808080;
+    border-bottom: solid 2px #808080;
+    background: linear-gradient(0deg, #db549f, #e7e948);
+    
+    .greet {
+      margin-top: 0;
+      font-size: 2rem;
+    }
+    
+    .text {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.img-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+  
+  .img-1 {
+    width: 40%;
+  }
+  
+  .img-2 {
+    width: 40%;
+  }
+}
+
 .mission {
   display: inline-block;
   position: relative;
