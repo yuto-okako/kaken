@@ -13,7 +13,7 @@ class UsersController < ApplicationController
         end
       elsif 1000 <= time and time <= 1759
         @greet = "こんにちは"
-        @text = "張り切っていきましょう！。"
+        @text = "張り切っていきましょう！"
       else
         @greet = "こんばんは"
         @text = '今日の項目チェックをしませんか？'
